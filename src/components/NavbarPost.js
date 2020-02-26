@@ -34,8 +34,8 @@ class NavbarPost extends React.Component {
   };
 
   render() {
-    const { data } = this.props;
-    const { group } = data.markdownRemark;
+    // const { data } = this.props;
+    // const { group } = data.markdownRemark;
 
     return (
       <nav
@@ -68,11 +68,3 @@ NavbarPost.propTypes = {
 
 
 export default NavbarPost
-
-export const NavbarPostQuery = graphql`
-  query NavbarPost($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      tableOfContents
-    }
-  }
-`;
