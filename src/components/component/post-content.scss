@@ -1,0 +1,105 @@
+@import "../_variables";
+
+.post-content {
+  padding: 45px 15px;
+  font-size: 18px;
+  color: $text;
+  word-wrap: break-word;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin: 2.4em 0 1.4em 0;
+    border-bottom: 1px solid $text-ww;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin: 2.4em 0 1.4em 0;
+    border-bottom: 1px solid $text-ww;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin: 2em 0 1.4em 0;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin: 2em 0 1.4em 0;
+  }
+
+  a {
+    color: $accent;
+  }
+
+  a:after {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0 .1em;
+    vertical-align: middle;
+    background-image: url("../img/launch.svg");
+    background-size: contain;
+    background-position: center;
+  }
+
+  a:visited {
+    color: $accent;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  blockquote {
+    margin: 1.5em 0;
+    padding: 1em 0 1em 1em;
+    border-left: solid 2px $text-ww;
+    color: $text-w;
+  }
+
+  ul {
+    margin: 1.5em 0;
+    padding: 0 0 0 2em;
+  }
+
+  ol {
+    margin: 1.5em 0;
+    padding: 0 0 0 2em;
+  }
+
+  .post-content__description {
+    margin: 0 0 2em 0;
+  }
+
+  // sxh
+  .gatsby-highlight {
+    margin: 1.5em 0;
+  }
+
+  // footnotes
+  .footnotes {
+    p {
+      display: inline;
+      margin: 0;
+    }
+  }
+
+  .footnote-ref {
+    &:after {
+      content: none;
+    }
+  }
+
+  .footnote-backref {
+    &:after {
+      content: none;
+    }
+  }
+}

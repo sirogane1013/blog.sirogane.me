@@ -1,0 +1,29 @@
+// color scheme
+$bg: #F0F2F9;
+$text: #474B59;
+$text-w: #606063;
+$text-ww: #c2c2c5;
+$accent: #736B57;
+$accent-w: #ADA284;
+
+// shadow
+$shadow: -4px -4px 5px #FFFFFFBF,
+  4px 4px 5px #B0B1B480;
+$shadow-hovered: -4px -4px 15px #FFFFFFBF,
+  4px 4px 15px #B0B1B480;
+$shadow-hovered-s: -4px -4px 10px #FFFFFFBF,
+4px 4px 10px #B0B1B480;
+
+// media query
+$breakpoints: (
+        'sm': 'screen and (min-width: 400px)',
+        'md': 'screen and (min-width: 768px)',
+        'lg': 'screen and (min-width: 960px)',
+        'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

@@ -1,0 +1,95 @@
+@import "../_variables";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  background: $bg;
+  box-shadow: $shadow;
+  border: 1px solid #FFFFFF33;
+  border-radius: 25px;
+
+  &--sticky {
+    position: sticky;
+    top: 20px;
+  }
+
+  &--is-clickable {
+    padding-bottom: 10px;
+  }
+
+  &--is-clickable:hover {
+    box-shadow: $shadow-hovered;
+  }
+
+  &--is-clickable:after {
+    content: "more";
+    display: block;
+    box-sizing: border-box;
+    margin: 5px 0;
+    padding-right: 1.1em;
+    font-size: 16px;
+    line-height: 16px;
+    align-self: flex-end;
+    background-image: url("../img/launch.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 1em;
+    color: $accent;
+  }
+}
+
+.card__content {
+  width: 100%;
+}
+
+.card__header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid $bg;
+  box-shadow: $shadow;
+  flex-shrink: 0;
+}
+
+.card__title {
+  margin: 0;
+  padding: 0;
+}
+
+.card__title-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  line-height: 37px;
+  font-weight: bold;
+  color: $text;
+
+  > *:nth-child(2) {
+    margin: 0 0 0 7px;
+  }
+}
+
+.card__date {
+  margin: 0;
+  font-size: 14px;
+  line-height: 19px;
+  color: $text-w;
+}
+
+.card__excerpt {
+  margin: 20px 0 0 0;
+  font-size: 16px;
+  color: $text;
+}

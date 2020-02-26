@@ -1,0 +1,14 @@
+@import "../_variables";
+
+.tag-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 15px 0 0 0;
+  padding: 0;
+  list-style: none;
+  color: $text-w;
+  > *{
+    margin: 6px 10px 6px 0;
+  }
+}

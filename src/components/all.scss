@@ -1,0 +1,41 @@
+@import "_variables";
+@import "plugin/prismjs/my-theme";
+@import "component/card";
+@import "component/card-list";
+@import "component/navbar";
+@import "component/post-head";
+@import "component/post-content";
+@import "component/tag";
+@import "component/tag-list";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg;
+}
+
+a {
+  width: fit-content;
+  text-decoration: none;
+}
+
+.all-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1024px;
+
+  @include mq(lg) {
+    padding: 0 30px;
+  }
+}
+
+main {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  @include mq(lg) {
+    width: 65%;
+  }
+}
