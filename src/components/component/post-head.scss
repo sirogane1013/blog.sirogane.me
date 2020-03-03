@@ -7,6 +7,10 @@
   @include mq(lg) {
     border-radius: 0 0 25px 25px;
   }
+
+  &--tags {
+    padding: 32px 16px 16px 16px;
+  }
 }
 
 .post-head__date {
@@ -20,4 +24,30 @@
   line-height: 37px;
   font-weight: bold;
   color: $text;
+
+  &--tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin: 0;
+      vertical-align: middle;
+      background-image: url("../img/tag-black.svg");
+      background-size: contain;
+      background-position: center;
+    }
+  }
+}
+
+.post-head__subtitle {
+  margin: 5px 0 0 0;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: bold;
+  color: $text-w;
 }

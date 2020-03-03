@@ -1,25 +1,26 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import {Link, graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import { BlogRoll } from "../components/BlogRoll";
-import {kebabCase} from "lodash";
 
 class TagRoute extends React.Component {
   render() {
     const tag = this.props.pageContext.tag;
     const title = this.props.data.site.siteMetadata.title;
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
-    const tagHeader = `${tag}(${totalCount})`;
 
     return (
       <Layout>
         <section className="section">
           <Helmet title={`${tag} | ${title}`}/>
-          <div className="post-head">
-            <h1 className="post-head__title">
-              {tagHeader}
+          <div className="post-head post-head--tags">
+            <h1 className="post-head__title post-head__title--tags">
+              { tag }
             </h1>
+            <h2 className="post-head__subtitle">
+              {totalCount}件の投稿
+            </h2>
           </div>
           <BlogRoll data={{
             allMarkdownRemark: this.props.data.allMarkdownRemark
@@ -55,15 +56,9 @@ export const tagPageQuery = graphql`
           frontmatter {
             title
             templateKey
+            description
             date(formatString: "YYYY/MM/DD")
-            featuredpost
-            featuredimage {
-              childImageSharp {
-                fluid(maxWidth: 120, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            tags
           }
         }
       }

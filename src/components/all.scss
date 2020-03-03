@@ -24,7 +24,7 @@ a {
   justify-content: space-between;
   margin: 0 auto;
   padding: 0;
-  max-width: 1024px;
+  max-width: 1200px;
 
   @include mq(lg) {
     padding: 0 30px;
@@ -36,6 +36,6 @@ main {
   margin: 0;
   box-sizing: border-box;
   @include mq(lg) {
-    width: 65%;
+    width: 72%;
   }
 }

@@ -15,6 +15,10 @@
     top: 20px;
   }
 
+  &--profile {
+
+  }
+
   &--is-clickable {
     padding-bottom: 10px;
   }
@@ -37,11 +41,31 @@
     background-position: right center;
     background-size: 1em;
     color: $accent;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
+}
+
+.card__row {
+  display: flex;
+  flex-direction: row;
+}
+
+.card__column {
+  display: flex;
+  flex-direction: column;
 }
 
 .card__content {
   width: 100%;
+}
+
+.card__list {
+  margin: 5px 0 0 15px;
+  padding: 0;
+  list-style: none;
 }
 
 .card__header {
@@ -55,8 +79,13 @@
   height: 60px;
   border-radius: 50%;
   border: 5px solid $bg;
-  box-shadow: $shadow;
   flex-shrink: 0;
+
+  &--profile {
+    width: 70px;
+    height: 70px;
+    border: 0;
+  }
 }
 
 .card__title {
@@ -86,10 +115,42 @@
   font-size: 14px;
   line-height: 19px;
   color: $text-w;
+
 }
 
 .card__excerpt {
   margin: 20px 0 0 0;
   font-size: 16px;
   color: $text;
+}
+
+.card__main {
+  color: $text;
+
+  &--profile {
+    font-size: 16px;
+    margin: 0 0 0 15px;
+  }
+}
+
+.card__ext-link {
+  font-size: 16px;
+  line-height: 16px;
+  color: $accent;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0 .1em;
+    vertical-align: middle;
+    background-image: url("../img/link.svg");
+    background-size: contain;
+    background-position: center;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

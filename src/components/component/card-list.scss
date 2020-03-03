@@ -2,16 +2,24 @@
 
 .card-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 0 30px;
   margin-top: 30px;
 
-  @include mq(lg) {
-    padding: 0;
-  }
-
-  > *{
-    margin-top: 36px;
+  > * {
+    margin-top: 17px;
     width: 100%;
   }
+
+  //@include mq(md) {
+  //  > *:nth-child(n+2) {
+  //    width: 49%;
+  //  }
+  //  > *:nth-child(5n+1) {
+  //    width: 100%;
+  //  }
+  //}
+
 }

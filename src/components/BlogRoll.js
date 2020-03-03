@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link, graphql, StaticQuery} from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import {kebabCase} from "lodash";
 
 class BlogRoll extends React.Component {
   render() {
@@ -20,20 +21,21 @@ class BlogRoll extends React.Component {
                     {post.frontmatter.date}
                   </p>
                   <div className="card__title-section">
-                    {post.frontmatter.featuredimage ? (
-                      <div className="card__image">
-                        <PreviewCompatibleImage
-                          imageInfo={{
-                            image: post.frontmatter.featuredimage,
-                            alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                          }}
-                        />
-                      </div>
-                    ) : null}
                     <p className="card__title">
                       {post.frontmatter.title}
                     </p>
                   </div>
+                  {post.frontmatter.tags && post.frontmatter.tags.length ? (
+                    <ul className="tag-list tag-list--card">
+                      {post.frontmatter.tags.map(tag => (
+                        <Link to={`/tags/${kebabCase(tag)}/`}>
+                          <li key={tag + `tag`} className="tag">
+                            {tag}
+                          </li>
+                        </Link>
+                      ))}
+                    </ul>
+                  ) : null}
                 </header>
                 {post.frontmatter.description &&
                   <p className="card__excerpt">
@@ -77,14 +79,7 @@ export default () => (
                 templateKey
                 description
                 date(formatString: "YYYY/MM/DD")
-                featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
+                tags
               }
             }
           }

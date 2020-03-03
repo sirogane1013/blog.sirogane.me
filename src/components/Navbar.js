@@ -1,6 +1,7 @@
 import React from 'react'
 import {graphql, Link, StaticQuery} from 'gatsby'
 import logo from '../img/logo.svg'
+import avatar from '../img/avatar.svg'
 import {kebabCase} from "lodash";
 import PropTypes from "prop-types";
 
@@ -48,9 +49,24 @@ class Navbar extends React.Component {
             <img src={ logo } alt="Sirogane's Blog" style={{ width: '100%' }} />
           </Link>
         </div>
-        <div className="card">
+        <div className="card card--profile">
           <div className="card__title-section">
-            <p className="card__title">Profile</p>
+            <p className="card__title">About</p>
+          </div>
+          <div className="card__row">
+            <div className="card__image card__image--profile">
+              <img src={ avatar } alt="Sirogane" style={{ width: '100%' }} />
+            </div>
+            <div className="card__column">
+              <p className="card__main card__main--profile">
+                私(わたくし)的ブログ
+              </p>
+              <ul className="card__list">
+                <li>
+                  <a href="https://github.com/sirogane1013" className="card__ext-link">github</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="card">
@@ -67,11 +83,6 @@ class Navbar extends React.Component {
                 </Link>
               ))}
             </ul>
-          </div>
-        </div>
-        <div className="card">
-          <div className="card__title-section">
-            <p className="card__title">Archives</p>
           </div>
         </div>
       </nav>
