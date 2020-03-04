@@ -7,7 +7,8 @@
   word-wrap: break-word;
 
   p {
-    margin: 0;
+    display: block;
+    margin: 1em 0 0 0;
     padding: 0;
   }
 
@@ -75,6 +76,7 @@
   }
 
   img {
+    display: block;
     max-width: 100%;
   }
 

@@ -21,12 +21,14 @@ a {
 
 .all-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
   padding: 0;
   max-width: 1200px;
 
   @include mq(lg) {
+    flex-direction: row;
     padding: 0 30px;
   }
 }

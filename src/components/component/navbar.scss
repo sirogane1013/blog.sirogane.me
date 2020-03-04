@@ -1,20 +1,32 @@
 @import "../_variables";
 
 .navbar {
-  width: 27%;
-  display: none;
+  width: 100%;
+  padding: 0 30px;
+  margin-top: 60px;
+  box-sizing: border-box;
+
   > *:nth-child(n+2) {
-    margin-top: 35px;
+    margin-top: 20px;
   }
 
   @include mq(lg) {
-    display: block;
-    padding-top: 30px;
+    width: 27%;
+    margin: 0;
+    padding: 30px 0 0 0;
+
+    > *:nth-child(n+2) {
+      margin-top: 35px;
+    }
   }
 }
 
 .navbar__logo {
   display: block;
-  width: 75%;
+  width: 45%;
   margin: 0 auto;
+
+  @include mq(lg) {
+    width: 75%;
+  }
 }
