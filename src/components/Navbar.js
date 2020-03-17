@@ -63,7 +63,10 @@ class Navbar extends React.Component {
               </p>
               <ul className="card__list">
                 <li>
-                  <a href="https://github.com/sirogane1013" className="card__ext-link">github</a>
+                  <a href="https://sirogane.me/" className="card__ext-link">About Me</a>
+                </li>
+                <li>
+                  <a href="https://github.com/sirogane1013" className="card__ext-link">GitHub</a>
                 </li>
               </ul>
             </div>
